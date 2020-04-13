@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2vw;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height:100%;
+}
+
+#teclado div{
+    text-align: center ;
+}
+
+
+#calculadora{
+    width: 85%;
+    height: 80%;
+    margin: 7%;
+    background-color: black;
+    border-radius: 15px;
+}
+/* large devices */
+@media (min-width: 1200px){ 
+    #calculadora{
+        width: 45%;
+        height: 80%;
+        margin: 25%;
+    }
+}
+
+
+#pantalla{
+    background-color: black;
+    width: 100%;
+    height: 25%;
+    float: right;
+    border-radius: 15px;
+
+}
+#resultado{
+    margin: 7%;
+    font-size: 3em;
+}
+
+#teclado{
+    width:100%;
+    height: 100%;
+    
+}
+.botones{
+    width:100%;
+    height: 14%;
+    display: flex; 
+
+}
+.boton{
+    margin: 1.5%;
+    width: 24%;
+    height: 0,6%;
+    border-radius: 50%;
+    border: none;
+    font-size: 2em;
+    justify-content: flex-end;
+    border: none;
+    color: whitesmoke;
+}
+.boton0{
+    margin: 1%;
+    width: 48%;
+    height: 0,6%;
+    border-radius: 50%;
+    border: none;
+    font-size: 2em;
+    justify-content: flex-end;
+    color: whitesmoke;
+}
+
+
+#resultado{
+    color: blanchedalmond;
+    font-size: 4em;
+    float: right;
+}
+
+.naranja{
+    background-color: rgb(241,147,38);
+}
+.negro{
+    background-color: rgb(34,34,34);
+}
+.gris{
+    background-color: rgb(128,128,128);
+}
+button:focus{
+    outline: none;
+}
+button.negro:active{
+    opacity: 0.5;
+    background-color: wheat ;
+}
+
+button.operacion:focus{
+    color: rgb(241, 147, 38);
+    border: none;
+    padding: none;
+    background-color: whitesmoke;
+}
