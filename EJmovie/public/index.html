@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>	
+    <head>
+            <title>Movie</title>	
+
+            <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <link rel="stylesheet" type="text/css" href="styles.css" />
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+            <script type="text/javascript" src="script.js"></script>
+    </head> 
+    <body>
+        <h1><img src="moviecorp.png" id="logo"></h1>
+        <br><br>
+
+        <div id="container">
+            <select onclick="cargaPeliculas()" id="cinesCombo">
+                <option value="" selected disabled hidden>Choose here</option>
+            </select>
+
+            <div id="peliculas">
+                <button class="button" onclick="cargaListaPeliculas()">Buscar...</button>
+                <h2>Peliculas:</h2>
+                <ul id="listapeliculas">
+                    <!-- <li class="objlista objlista1">
+                        <button></button>
+                        <img src="" alt="">
+                        <ul class="horarios">    
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>     
+        </div>
+    </body>
+ </html> 
