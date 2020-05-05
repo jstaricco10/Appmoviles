@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<title>Tabs con jquery</title>
+    <link rel="stylesheet" type="text/css" href="jq2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jq2.js"></script>
+  </head>
+  <body>
+    <h1>Tabs en jquery</h1>
+
+    <ul class="tabs">
+      <li><a href="#tab1">Tab 1</a></li>
+      <li id="th2"><a href="#tab2">Tab 2</a></li>
+    </ul>
+ 
+    <div class="tab_container">
+        <div class="tab_content" id="tab1">
+           <form>
+             <label for="ip">Por favor ingrese una IP</label>
+             <input id="ip" name="ip" type="text">
+             <br><br>
+             <input type="button" onclick="consultarIP()" value='Consultar IP'><br><br>
+           </form>
+        </div>
+        <div class="tab_content" id="tab2">          
+          <table>
+            <tr>
+              <td>IP</td>
+              <td id="resIP"></td>
+            </tr>
+            <tr>
+              <td>Código de país</td>
+              <td id="resCP"></td>
+            </tr>
+            <tr>
+              <td>Pais</td>
+              <td id="resPA"></td>
+            </tr>
+            <tr>
+              <td>Bandera</td>
+              <td id="resBA"></td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    
+  </body>
+</html>
