@@ -24,23 +24,39 @@ $(document).ready(function(){
         let nuevaEdad = $('#edad');
         let nuevoId = $('#id');
 
-        $.ajax({
-            url: '/personas',
-            method: 'POST',
-            data: {
-                name: nuevoNombre.val(),
-                apellido: nuevoApellido.val(),
-                edad: nuevaEdad.val(),
-                id: nuevoId.val()
-            },
-            success: function(respuesta){
-                //console.log(nuevoNombre.val());
-                console.log(respuesta);
+        if(nuevoId.val()===''){
+            $.ajax({
+                url: '/personas',
+                method: 'POST',
+                data: {
+                    name: nuevoNombre.val(),
+                    apellido: nuevoApellido.val(),
+                    edad: nuevaEdad.val(),
+                    id: nuevoId.val()
+                },
+                success: function(respuesta){
+                    console.log(respuesta);
+                    $('#getPersonas').click();
+                }
+            })
+        } else{
+            $.ajax({
+                url: '/personas/' + nuevoId.val(),
+                method: 'PUT',
+                data: {
+                    name: nuevoNombre.val(),
+                    apellido: nuevoApellido.val(),
+                    edad: nuevaEdad.val(),
+                    id: nuevoId.val()
+                },
+                success: function(respuesta){
+                    console.log(respuesta);
+                    //cuando termina hay que actualizar la lista por lo tanto hacemos:
+                    $('#getPersonas').click();
+                }
+            })
 
-                //cuando termina hay que actualizar la lista por lo tanto hacemos:
-                $('#getPersonas').click();
-            }
-        })
+        }
     });
 
     $('#listaPersonas').on('click','.eliminarPersona', function(){
@@ -67,11 +83,22 @@ $(document).ready(function(){
     });
 
 
-    $('#listaPersonas').on('click','.editar', function(){
+    $('#listaPersonas').on('click','.editarPersona', function(){
         // lugares 1,2,4 y length-2
         //se le pasa el id al que le debemos hacer update, se hace en la base
         //y por ultimo se actualiza la lista
+        var pr =  $(this).parent().html();
+        var arr = pr.toString();
+        var separo = arr.split(' ');
+        var lugaridAEdit = separo.length-2;
+        var idAEdit = separo[lugaridAEdit];
+        var nombreAEdit = separo[0];
+        var apellidoAEdit = separo[1];
+        var edadAEdit = separo[3];
 
- 
+        $('#nombre').val(nombreAEdit);
+        $('#apellido').val(apellidoAEdit);
+        $('#edad').val(edadAEdit);
+        $('#id').val(idAEdit);
     });
 });

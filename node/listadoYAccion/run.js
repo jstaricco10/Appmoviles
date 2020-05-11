@@ -50,30 +50,32 @@ app.get('/personas',(req,res) => {
 		res.json(per);
 	});
 });
-//update persona
+//crear persona
 app.post('/personas', (req,res) => {
-	//const persona = req.body;
-	console.log(req.body);
-	//res.send(persona); 	
-	
-	//aca tengo que hacer con mongo un create si no existe y update si existe
-	// podemos empezar por solo crear.
-	// tengo que ver si voy a hacer update o eliminar y crear
-	if(req.body.id === ''){
-		//entonces creo
-		let nuevaPersona = persona.create({
-			name: req.body.name,
-			apellido: req.body.apellido,
-			edad : req.body.edad
-		});
-		res.json("Se agrego la persona.");
-		// nuevaPersona.save(function(err,persona){
-		// 	if(err) return console.error(err);
-		// 	res.json(nuevaPersona);
-		// })
-	} else{
-		//hacemos el update, porque el id ya esta seteado;
-	}
+
+	console.log(req.body);	
+	//entonces creo
+	let nuevaPersona = persona.create({
+		name: req.body.name,
+		apellido: req.body.apellido,
+		edad : req.body.edad
+	});
+	res.json("Se agrego la persona.");
+});
+
+//update persona
+app.put('/personas/:id', (req,res) => {
+
+	console.log(req.body);	
+	//entonces actualizo
+	persona.findByIdAndUpdate({_id:req.params.id},{
+		name: req.body.name,
+		apellido: req.body.apellido,
+		edad : req.body.edad
+	}, function(err){
+		if(err) console.log(err);
+		res.json("Se actualizo la persona.");
+	});
 });
 
 
