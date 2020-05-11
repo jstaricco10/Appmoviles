@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<title>Coleccion de personas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+  </head>
+  <body>
+    <h1>Mi Coleccion de personas</h1>
+    <h2>Aqui iran las personas de la base de datos. Cada una con su nombre, apellido y edad.</h2>
+    <h3><button id="getPersonas">Agregar personas a la lista</button></h3>
+
+    <ul id="listaPersonas">
+    </ul>
+    <!-- capaz meto una tabla -->
+
+    <form id="formulario" action="">
+        <label>Forrmulario de nueva persona:</label>
+        <br>
+        <label >Nombre:</label> <input id="nombre" type="text">
+        <br>
+        <label >Apellido:</label> <input id="apellido" type="text">
+        <br>
+        <label >Edad:</label> <input id="edad" type="text">
+        <br>
+        <label >Id:</label> <input id="id" type="text">
+        <br>
+        <button id="agregarPersona">Agregar</button>
+    </form>
+
+
+  </body>
+</html>
