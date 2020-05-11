@@ -55,8 +55,11 @@ $(document).ready(function(){
                     $('#getPersonas').click();
                 }
             })
-
         }
+        $('#nombre').val('');
+        $('#apellido').val('');
+        $('#edad').val('');
+        $('#id').val('');
     });
 
     $('#listaPersonas').on('click','.eliminarPersona', function(){
